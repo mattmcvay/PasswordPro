@@ -1,0 +1,43 @@
+﻿
+@model List<PasswordPro.Web.Models.Entities.Password>
+
+
+<h2>Passwords</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>URL</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Question/Answer</th>
+            <th>Note</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var password in Model)
+        {
+            <tr>
+                <td>@password.Name</td>
+                <td>@password.Url</td>
+                <td>@password.UserName</td>
+                <td>@password.Passphrase</td>
+                <td>@password.Email</td>
+                <td>@password.QuestionAnwser</td>
+                <td>@password.Note</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Passwords" asp-action="Edit" asp-route-id="@password.Id">Edit</a>
+                </td>
+                <td>      
+                   <form method="post">
+                     <button type="submit" class="btn btn-danger" asp-controller="Passwords" asp-action="Delete2" asp-route-id="@password.Id">Delete</button>
+                   </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
