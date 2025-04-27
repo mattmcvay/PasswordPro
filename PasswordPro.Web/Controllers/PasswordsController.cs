@@ -76,24 +76,24 @@ namespace PasswordPro.Web.Controllers
             return RedirectToAction("List", "Passwords");
         }
 
+        //[HttpPost]
+        //public async Task<IActionResult> Delete(Password viewModel)
+        //{
+        //    var password = await _dbContext.Passwords
+        //        .AsNoTracking()
+        //        .FirstOrDefaultAsync(x => x.Id == viewModel.Id);
+
+        //    if (password is not null)
+        //    {
+        //        _dbContext.Passwords.Remove(password);
+        //        await _dbContext.SaveChangesAsync();
+        //    }
+
+        //    return RedirectToAction("List", "Passwords");
+        //}
+
         [HttpPost]
-        public async Task<IActionResult> Delete(Password viewModel)
-        {
-            var password = await _dbContext.Passwords
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == viewModel.Id);
-
-            if (password is not null)
-            {
-                _dbContext.Passwords.Remove(password);
-                await _dbContext.SaveChangesAsync();
-            }
-
-            return RedirectToAction("List", "Passwords");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Delete2(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var password = await _dbContext.Passwords
                 .AsNoTracking()
