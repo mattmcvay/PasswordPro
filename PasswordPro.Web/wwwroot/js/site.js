@@ -1,5 +1,4 @@
 ﻿
-
 $('.deleteBtn').on('click', function () {
 	var name = $(this).val();
 	var id = $(this).data('value')
@@ -12,7 +11,7 @@ $('.deleteBtn').on('click', function () {
 		autoOpen: true,
 		modal: true, //grays out stuff
 		text: 'hi',
-		title: 'Confirm Deletion of ID:' + id,
+		title: 'Confirm Deletion of ID: ' + id,
 		height: 230,
 		width: 340,
 		buttons: {
@@ -26,7 +25,6 @@ $('.deleteBtn').on('click', function () {
 	}); 
 
 })
-
 function DeletePassword(id) {
 	$.ajax({
 		type: "POST",
