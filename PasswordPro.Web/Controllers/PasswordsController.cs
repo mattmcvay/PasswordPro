@@ -45,6 +45,15 @@ namespace PasswordPro.Web.Controllers
         public async Task<IActionResult> List()
         {
             var passwords = await _dbContext.Passwords.ToListAsync();
+
+            foreach(var password in passwords)
+            {
+                if (password.QuestionAnwser is null)
+                {
+                    password.QuestionAnwser = "";
+                }
+            }
+
             return View(passwords);
         }
 

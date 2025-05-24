@@ -28,3 +28,34 @@ body {
 #confirmDelete{
     visibility:hidden;
 }
+
+#qa{
+    visibility:hidden;
+}
+#editqa {
+    visibility: hidden;
+}
+
+#jsonString {
+    margin-top: 50px;
+}
+
+#jsonStringInputField{
+    width: 600px;
+}
+
+#EditjsonStringInputField {
+    width: 600px;
+}
+
+#questionInputField{
+    width: 500px;
+}
+
+#EditquestionInputField {
+    width: 500px;
+}
+
+#addQA{
+    margin-left: 20px;
+}
