@@ -39,7 +39,7 @@ else
 
         <div class="mt-3">
             <label class="form-label">Question/Answer</label>
-            <input type="text" class="form-control" asp-for="QuestionAnwser" />
+            <input type="text" class="form-control" asp-for="QuestionAnwser" id="EditQATextInput" readonly />
         </div>
 
         <div class="mt-3">
@@ -53,3 +53,25 @@ else
 
     </form>
  }
+
+<div id="editqa">
+    <div>
+        <label>Question</label>
+        <input type="text" id="EditquestionInputField" required />
+
+        <label>Answer</label>
+        <input type="text" id="EditanswerInputField" required />
+        <button type="submit" id="EditQA">Add</button>
+    </div>
+    <div>
+        <div style="margin-top: 20px;">Question/Answer</div>
+        <div id="EditqaGrid"></div>
+    </div>
+
+    <div id="jsonString">
+        <label>json string</label>
+    </div>
+    <div>
+        <input type="text" id="EditjsonStringInputField"  readonly />
+    </div>
+</div>

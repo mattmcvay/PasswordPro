@@ -12,6 +12,7 @@ else{
 <div id="confirmDelete">
 </div>
 
+
 <h2>Passwords</h2>
 
 <a asp-controller="Passwords" asp-action="Add" style="font-size: 18px; color:blue;">Add New Password</a>
@@ -42,7 +43,7 @@ else{
                 <td>@password.UserName</td>
                 <td>@password.Passphrase</td>
                 <td>@password.Email</td>
-                <td>@password.QuestionAnwser</td>
+                <td class="QAList">@password.QuestionAnwser</td>
                 <td>@password.Note</td>
                 <td>
                     <a class="btn btn-primary" asp-controller="Passwords" asp-action="Edit" asp-route-id="@password.Id">Edit</a>
