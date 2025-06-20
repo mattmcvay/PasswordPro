@@ -243,3 +243,21 @@ $(document).on('click', '.editRemoveButton', function () {
 	$(this).parent().remove();
 	GenerateEdit();
 });
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+// search
+
+$('#search').on('keyup', function () {
+	var searchText = $(this).val().toLowerCase();
+
+	$('tbody tr').each(function () {
+		var password = $(this).text().toLowerCase();
+
+		if (password.includes(searchText)) {
+			$(this).show();
+		} else {
+			$(this).hide();
+		}
+	})
+
+})
