@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using PasswordPro.Web.Data;
 
@@ -32,5 +33,26 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Passwords}/{action=List}/{id?}");
+
+// Set your desired URL (should match launchSettings.json or what you see in console)
+var url = "http://localhost:5000"; // or "https://localhost:5000" depending on what your app uses
+
+// Register event to open browser after app starts
+app.Lifetime.ApplicationStarted.Register(() =>
+{
+    try
+    {
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = url,
+            UseShellExecute = true // ensures default browser is used
+        });
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Could not open browser: {ex.Message}");
+    }
+});
+
 
 app.Run();
